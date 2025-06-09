@@ -13,3 +13,13 @@ ENV HOME=/${WORKDIR} \
     API_URL=${API_URL}
 
 WORKDIR ${HOME}
+
+# コンテナにパッケージをインストール
+COPY package*.json ./
+RUN yarn install
+
+# コンテナにNuxtjsプロジェクトをコピー
+COPY . ./
+
+# 本番環境でのビルド
+RUN yarn run build

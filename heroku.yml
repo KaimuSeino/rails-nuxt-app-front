@@ -1,0 +1,12 @@
+setup:
+  config:
+    NODE_ENV: production
+    NPM_CONFIG_PRODUCTION: false
+build:
+  docker:
+    web: Dockerfile
+  config:
+    WORKDIR: app
+    API_URL: "https://rails-nuxt-app-api-b97b2b7f1ce6.herokuapp.com/"
+run:
+  web: yarn run start
