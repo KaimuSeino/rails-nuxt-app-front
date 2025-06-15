@@ -1,4 +1,3 @@
-<!-- ~/components/HelloFetcher.vue -->
 <template>
   <div>
     <button type="button" @click="getMsg">
@@ -20,7 +19,7 @@ const getMsg = async () => {
   try {
     // サーバーサイド／クライアントサイド問わず使えるユーティリティ
     const { $api } = useNuxtApp()
-    const res = await $api('/api/v1/hello')
+    const res = await $api('/api/v1/users')
     console.log('API', res)
     msgs.value.push(res)
   } catch (e) {
